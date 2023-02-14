@@ -39,4 +39,5 @@ export type Vultr = {
 
 export type Screens = {
   screenWidth960: number;
+  screenWidth414: number;
 };

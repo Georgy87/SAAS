@@ -64,7 +64,43 @@ class CanvasService implements ICanvasService {
     context.strokeStyle = '#4F84C8';
     context.lineWidth = 3;
     context.stroke();
-    
+  }
+  public drawMobileVertical(
+    canvas: HTMLCanvasElement,
+    company: ICompanies[],
+    context: CanvasRenderingContext2D,
+    width: number
+  ) {
+    let x: number = 15;
+    let y: number = canvas.height;
+    canvas.width = width;
+  
+    if (!canvas) return;
+    if (!context) return;
+
+    context.clearRect(0, 0, canvas.width, canvas.height);
+
+    for (let i = 0; i < company.length; i++) {
+      context.fillStyle = company[i].color;
+      context.font = 'bold 12px normal';
+      context.textAlign = 'center';
+      context.fillText(
+        `${String(company[i].price.toFixed(2))}$`,
+        x + this.rectangleWidth / 2,
+        380 + -company[i].price * 4
+      );
+      context.fillRect(x, y, this.rectangleWidth, -company[i].price * 4);
+
+      x += canvas.width / 4;
+    }
+
+    context.beginPath();
+    context.moveTo(canvas.width, canvas.height);
+    context.lineTo(0, canvas.height);
+    context.strokeStyle = '#4F84C8';
+    context.lineWidth = 3;
+    context.stroke();
+    context.restore();
   }
 }
 

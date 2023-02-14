@@ -95,6 +95,9 @@ export const Companies: FC<PropsType> = ({ storage, transfer }) => {
     width < screens.screenWidth960
       ? canvasService.drawVertical(canvas, company, context)
       : canvasService.drawHorizontal(canvas, company, context);
+      if (width < screens.screenWidth414) {
+        canvasService.drawMobileVertical(canvas, company, context, width);
+      }
   }, [storage, transfer, checkedMulti, checkedSingle, checkedHdd, checkedSsd, width]);
 
   const companies = () => {

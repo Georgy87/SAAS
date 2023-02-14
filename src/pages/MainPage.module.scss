@@ -8,4 +8,7 @@
     display: flex;
     flex-wrap: wrap-reverse;
   }
+  @media screen and (max-width: $screen-width-414) {
+    overflow-x: hidden;
+  }
 }

@@ -21,6 +21,10 @@
         font-weight: 500;
         color: black;
         margin-bottom: 15px;
+        @media screen and (max-width: $screen-width-414) {
+          width: 120px;
+          font-size: 12px;
+        }
       }
     }
 
@@ -34,10 +38,12 @@
       border: 1px solid #ebf6f5;
       border-radius: 10px;
       outline: none;
-      // background: #bad7e5;
       -webkit-appearance: none;
       @media screen and (max-width: $screen-width-960) {
         width: 150px;
+      }
+      @media screen and (max-width: $screen-width-414) {
+        width: 120px;
       }
     }
     input[type="range"]::before {
@@ -76,6 +82,9 @@
       transform: scale(1.2);
       background: #badad8;
     
+    }
+    @media screen and (max-width: $screen-width-414) {
+      width: 300px;
     }
   }
   @media screen and (max-width: $screen-width-960) {

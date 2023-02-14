@@ -83,6 +83,9 @@
             bottom: 0;
           }
         }
+        @media screen and (max-width: $screen-width-414) {
+          font-size: 12px;
+        }
       }
       @media screen and (max-width: $screen-width-960) {
         display: flex;
@@ -90,6 +93,9 @@
         width: 500px;
         padding: 0;
         padding-right: 0px;
+      }
+      @media screen and (max-width: $screen-width-414) {
+        width: 300px;
       }
     }
     @media screen and (max-width: $screen-width-960) {
