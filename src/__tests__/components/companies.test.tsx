@@ -1,11 +1,12 @@
 import { fireEvent, render, screen } from '@testing-library/react';
+
 import { Companies } from '@components/Companies';
 
 describe('COMPANIES', () => {
   it('should checked checkbox-hdd and checkbox-ssd', () => {
     const { getByTestId } = render(<Companies storage={100} transfer={200} />);
-    const hddCheckbox = getByTestId('checkbox-hdd') as HTMLInputElement;
-    const ssdCheckbox = getByTestId('checkbox-ssd') as HTMLInputElement;
+    const hddCheckbox = getByTestId('hdd') as HTMLInputElement;
+    const ssdCheckbox = getByTestId('ssd') as HTMLInputElement;
 
     expect(hddCheckbox.checked).toBe(true);
     fireEvent.click(hddCheckbox);
@@ -20,8 +21,8 @@ describe('COMPANIES', () => {
   });
   it('should checked checkbox-multy and checkbox-single', () => {
     const { getByTestId } = render(<Companies storage={100} transfer={200} />);
-    const hddCheckbox = getByTestId('checkbox-multy') as HTMLInputElement;
-    const ssdCheckbox = getByTestId('checkbox-single') as HTMLInputElement;
+    const hddCheckbox = getByTestId('multy') as HTMLInputElement;
+    const ssdCheckbox = getByTestId('single') as HTMLInputElement;
 
     expect(hddCheckbox.checked).toBe(true);
     fireEvent.click(hddCheckbox);

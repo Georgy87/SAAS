@@ -86,7 +86,7 @@ export const Companies: FC<PropsType> = ({ storage, transfer }) => {
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    
+
     if (!canvas) return;
     const context = canvas.getContext('2d') as CanvasRenderingContext2D;
 
@@ -95,9 +95,9 @@ export const Companies: FC<PropsType> = ({ storage, transfer }) => {
     width < screens.screenWidth960
       ? canvasService.drawVertical(canvas, company, context)
       : canvasService.drawHorizontal(canvas, company, context);
-      if (width < screens.screenWidth414) {
-        canvasService.drawMobileVertical(canvas, company, context, width);
-      }
+    if (width < screens.screenWidth414) {
+      canvasService.drawMobileVertical(canvas, company, context, width);
+    }
   }, [storage, transfer, checkedMulti, checkedSingle, checkedHdd, checkedSsd, width]);
 
   const companies = () => {
@@ -114,11 +114,23 @@ export const Companies: FC<PropsType> = ({ storage, transfer }) => {
             <div className={styles.customInputsBlock}>
               <div className={styles.options}>
                 <label htmlFor="hdd">hdd</label>
-                <Input type="checkbox" id="hdd" onChange={onChangeCheckedHdd} checked={checkedHdd} />
+                <Input
+                  type="checkbox"
+                  id="hdd"
+                  data-testid={'hdd'}
+                  onChange={onChangeCheckedHdd}
+                  checked={checkedHdd}
+                />
               </div>
               <div className={styles.optionsEnd}>
                 <label htmlFor="ssd">ssd</label>
-                <Input type="checkbox" id="ssd" onChange={onChangeCheckedSsd} checked={checkedSsd} />
+                <Input
+                  type="checkbox"
+                  id="ssd"
+                  data-testid={'ssd'}
+                  onChange={onChangeCheckedSsd}
+                  checked={checkedSsd}
+                />
               </div>
             </div>
           </li>
@@ -128,11 +140,23 @@ export const Companies: FC<PropsType> = ({ storage, transfer }) => {
             <div className={styles.customInputsBlock}>
               <div className={styles.options}>
                 <label htmlFor="multy">multy</label>
-                <Input type="checkbox" id="multy" onChange={onChangeCheckedMulti} checked={checkedMulti} />
+                <Input
+                  type="checkbox"
+                  id="multy"
+                  data-testid={'multy'}
+                  onChange={onChangeCheckedMulti}
+                  checked={checkedMulti}
+                />
               </div>
               <div className={styles.optionsEnd}>
                 <label htmlFor="single">single</label>
-                <Input type="checkbox" id="single" onChange={onChangeCheckedSingle} checked={checkedSingle} />
+                <Input
+                  type="checkbox"
+                  id="single"
+                  data-testid={'single'}
+                  onChange={onChangeCheckedSingle}
+                  checked={checkedSingle}
+                />
               </div>
             </div>
           </li>
@@ -148,7 +172,7 @@ export const Companies: FC<PropsType> = ({ storage, transfer }) => {
   const charts = () => {
     return (
       <div className={styles.chartsContainer}>
-        <canvas ref={canvasRef} width={500} height={400} />
+        <canvas ref={canvasRef} data-testid="canvas" width={500} height={400} />
       </div>
     );
   };

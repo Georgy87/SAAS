@@ -1,4 +1,5 @@
 import { ChangeEvent, FC } from 'react';
+import { Input } from '@components/Input/Input';
 
 import styles from './Sliders.module.scss';
 
@@ -16,13 +17,14 @@ export const Sliders: FC<PropsType> = ({ storage, transfer, onChangeStorage, onC
         <div className={styles.storage}>
           <div className={styles.textBlock}>
             <span>Storage: </span>
-            <span>{storage} GB</span>
+            <span data-testid={"text-storage"}>{storage} GB</span>
           </div>
 
-          <input
+          <Input
             type="range"
             min="0"
             max="1000"
+            data-testid={"input-storage"}
             value={storage}
             onChange={(e: ChangeEvent<HTMLInputElement>) => onChangeStorage(e)}
           />
@@ -31,13 +33,14 @@ export const Sliders: FC<PropsType> = ({ storage, transfer, onChangeStorage, onC
         <div className={styles.storage}>
           <div className={styles.textBlock}>
             <span>Transfer: </span>
-            <span>{transfer} GB</span>
+            <span data-testid={"text-transfer"}>{transfer} GB</span>
           </div>
 
-          <input
+          <Input
             type="range"
             min="0"
             max="1000"
+            data-testid={"input-transfer"}
             value={transfer}
             onChange={(e: ChangeEvent<HTMLInputElement>) => onChangeTransfer(e)}
           />

@@ -3,7 +3,7 @@ import { act } from 'react-dom/test-utils';
 
 import { useWindowSize } from '@hooks/useWindowSize';
 
-describe('USE SOUND', () => {
+describe('USE WINDOW SIZE ', () => {
   it('should update the window size when the window is resized', () => {
     const { result } = renderHook(() => useWindowSize());
     const initialWidth: number = result.current.width;
