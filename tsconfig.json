@@ -15,9 +15,6 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "types": [
-      "node"
-    ],
     "baseUrl": "./src",
     "paths": {
     "@/*": ["*"],
@@ -29,6 +26,6 @@
     "@utils/*": ["utils/*"],
 }
   },
-  "include": ["src", "vite.config.ts"],
+  "include": ["src", "vite.config.ts", "setupTests.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
