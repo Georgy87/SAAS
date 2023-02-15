@@ -19,7 +19,7 @@ class PriceCalculationService implements IPriceCalculationService {
     const currentTransferPrice = transfer * transferPrice;
     const sumPrices = currentStoragePrice + currentTransferPrice;
     const resultPrice = sumPrices > maxPayment ? maxPayment : sumPrices;
-    return storage !== 0 ? resultPrice : 0;
+    return storage !== 0 &&  transfer !== 0  ? resultPrice : 0;
   }
   public getScalewayPrice(storage: number, transfer: number, isTransferLimitPrice: number, isStorageLimitPrice: number) {
     const storagePrice = isStorageLimitPrice;

@@ -36,7 +36,7 @@
     "vite": "^4.1.0"
   },
   "jest": {
-    "collectCoverage": false,
+    "collectCoverage": true,
     "collectCoverageFrom": [
       "src/**/*.{ts,tsx}"
     ],
