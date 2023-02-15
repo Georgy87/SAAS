@@ -1,3 +1,4 @@
+import { CANVAS_COLORS } from '@constants/canvas';
 import { ICompanies } from '@constants/types';
 import { ICanvasService } from './types';
 
@@ -17,7 +18,7 @@ class CanvasService implements ICanvasService {
 
     for (let i = 0; i < company.length; i++) {
       context.fillStyle = company[i].color;
-      context.font = 'bold 12px normal';
+      context.font = CANVAS_COLORS.TEXT_FONT;
       context.textAlign = 'center';
       context.fillText(
         `${String(company[i].price.toFixed(2))}$`,
@@ -32,7 +33,7 @@ class CanvasService implements ICanvasService {
     context.beginPath();
     context.moveTo(canvas.width, canvas.width - 100);
     context.lineTo(0, canvas.width - 100);
-    context.strokeStyle = '#4F84C8';
+    context.strokeStyle = CANVAS_COLORS.TEXT_FONT;
     context.lineWidth = 3;
     context.stroke();
     context.restore();
@@ -49,7 +50,7 @@ class CanvasService implements ICanvasService {
 
     for (let i = 0; i < company.length; i++) {
       context.fillStyle = company[i].color;
-      context.font = 'bold 12px normal';
+      context.font = CANVAS_COLORS.TEXT_FONT;
       context.textAlign = 'center';
 
       context.fillText(`${String(company[i].price.toFixed(2))}$`, company[i].price * 6 + 35, y + 25);
@@ -61,7 +62,7 @@ class CanvasService implements ICanvasService {
     context.beginPath();
     context.moveTo(0, 0);
     context.lineTo(0, canvas.height - 45);
-    context.strokeStyle = '#4F84C8';
+    context.strokeStyle = CANVAS_COLORS.STROKE_STYLE;
     context.lineWidth = 3;
     context.stroke();
   }
@@ -82,7 +83,7 @@ class CanvasService implements ICanvasService {
 
     for (let i = 0; i < company.length; i++) {
       context.fillStyle = company[i].color;
-      context.font = 'bold 12px normal';
+      context.font = CANVAS_COLORS.TEXT_FONT;
       context.textAlign = 'center';
       context.fillText(
         `${String(company[i].price.toFixed(2))}$`,
@@ -97,7 +98,7 @@ class CanvasService implements ICanvasService {
     context.beginPath();
     context.moveTo(canvas.width, canvas.height);
     context.lineTo(0, canvas.height);
-    context.strokeStyle = '#4F84C8';
+    context.strokeStyle = CANVAS_COLORS.STROKE_STYLE;
     context.lineWidth = 3;
     context.stroke();
     context.restore();

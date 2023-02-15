@@ -13,6 +13,7 @@ export default defineConfig({
       "@pages": path.resolve(__dirname, "src/pages"),
       "@services": path.resolve(__dirname, "src/services"),
       "@utils": path.resolve(__dirname, "src/utils"),
+      "@mocks": path.resolve(__dirname, "src/__mocks__"),
     },
   },
   plugins: [react()],

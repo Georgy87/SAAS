@@ -36,7 +36,7 @@
     "vite": "^4.1.0"
   },
   "jest": {
-    "collectCoverage": true,
+    "collectCoverage": false,
     "collectCoverageFrom": [
       "src/**/*.{ts,tsx}"
     ],
@@ -57,7 +57,8 @@
       "^@constants(.*)$": "<rootDir>/src/constants$1",
       "^@services(.*)$": "<rootDir>/src/services$1",
       "^@utils(.*)$": "<rootDir>/src/utils$1",
-      "^@pages(.*)$": "<rootDir>/src/pages$1"
+      "^@pages(.*)$": "<rootDir>/src/pages$1",
+      "^@mocks(.*)$": "<rootDir>/src/__mocks__$1"
     }
   }
 }

@@ -1,3 +1,4 @@
+import { CANVAS_COLORS } from '@constants/canvas';
 import { ICompanies } from '@constants/types';
 
 export const createChartsData = (
@@ -9,25 +10,25 @@ export const createChartsData = (
   const companies: ICompanies[] = [
     {
       price: backblazePrice,
-      color: '#4a9892',
+      color: CANVAS_COLORS.RECTANGLE,
     },
     {
       price: bunnyPrice,
-      color: '#4a9892',
+      color: CANVAS_COLORS.RECTANGLE,
     },
     {
       price: scalewayPrice,
-      color: '#4a9892',
+      color: CANVAS_COLORS.RECTANGLE,
     },
     {
       price: vultrPrice,
-      color: '#4a9892',
+      color: CANVAS_COLORS.RECTANGLE,
     },
   ];
 
   const minPrice = Math.min(backblazePrice, bunnyPrice, scalewayPrice, vultrPrice);
   return companies.map((company: ICompanies) => {
-    company.price === minPrice ? (company.color = 'rgba(255,0,0,0.4)') : (company.color = '#4a9892');
+    company.price === minPrice ? (company.color = CANVAS_COLORS.MIN_RECTTANGLE) : (company.color = CANVAS_COLORS.RECTANGLE);
     return company;
   });
 };

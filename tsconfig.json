@@ -24,6 +24,7 @@
     "@hooks/*": ["hooks/*"],
     "@services/*": ["services/*"],
     "@utils/*": ["utils/*"],
+    "@mocks/*": ["__mocks__/*"],
 }
   },
   "include": ["src", "vite.config.ts", "setupTests.ts"],

@@ -14,17 +14,14 @@ describe('price calculation service', () => {
     scaleway.com Multi = 0$, Single = 0$.
     vultr.com = 5$.
   */
-    it('get backblaze price', () => {
-      const storage = 50;
-      const transfer = 50;
+    const storage = 50;
+    const transfer = 50;
+    it('should get backblaze price', () => {
       const result = priceCalculationService.getBackblazePrice(storage, transfer, backblaze);
       expect(result).toEqual(7);
     });
 
-    it('get bunny price', () => {
-      const storage = 50;
-      const transfer = 50;
-
+    it('should get bunny price', () => {
       const resultHdd = priceCalculationService.getBunnyPrice(storage, transfer, bunny, bunny.storagePrice.hdd);
       expect(resultHdd).toEqual(1);
 
@@ -32,10 +29,7 @@ describe('price calculation service', () => {
       expect(resultSsd).toEqual(1.5);
     });
 
-    it('get scaleway price', () => {
-      const storage = 50;
-      const transfer = 50;
-
+    it('should get scaleway price', () => {
       const isTransferLimitPrice = priceCalculationService.getTransferLimitPrice(transfer, scaleway);
       const isStorageMultyLimitPrice = priceCalculationService.getStorageLimitPrice(storage, true, scaleway);
       const isSingleLimitPrice = priceCalculationService.getStorageLimitPrice(storage, false, scaleway);
@@ -58,28 +52,21 @@ describe('price calculation service', () => {
       expect(Math.abs(resultSingle)).toEqual(0);
     });
 
-    it('get vultr price', () => {
-      const storage = 50;
-      const transfer = 50;
-
+    it('should get vultr price', () => {
       const result = priceCalculationService.getVultrPrice(storage, transfer, vultr);
-
       expect(result).toEqual(5);
     });
   });
 
   describe('storage = 100, transfer = 200', () => {
-    it('get backblaze price', () => {
-      const storage = 100;
-      const transfer = 200;
+    const transfer = 200;
+    const storage = 100;
+    it('should get backblaze price', () => {
       const result = priceCalculationService.getBackblazePrice(storage, transfer, backblaze);
       expect(result).toEqual(7);
     });
 
-    it('get bunny price', () => {
-      const storage = 100;
-      const transfer = 200;
-
+    it('should get bunny price', () => {
       const resultHdd = priceCalculationService.getBunnyPrice(storage, transfer, bunny, bunny.storagePrice.hdd);
       expect(resultHdd).toEqual(3);
 
@@ -87,10 +74,7 @@ describe('price calculation service', () => {
       expect(resultSsd).toEqual(4);
     });
 
-    it('get scaleway price', () => {
-      const storage = 100;
-      const transfer = 200;
-
+    it('should get scaleway price', () => {
       const isTransferLimitPrice = priceCalculationService.getTransferLimitPrice(transfer, scaleway);
       const isStorageMultyLimitPrice = priceCalculationService.getStorageLimitPrice(storage, true, scaleway);
       const isSingleLimitPrice = priceCalculationService.getStorageLimitPrice(storage, false, scaleway);
@@ -113,10 +97,7 @@ describe('price calculation service', () => {
       expect(Math.abs(resultSingle)).toEqual(3.25);
     });
 
-    it('get vultr price', () => {
-      const storage = 100;
-      const transfer = 200;
-
+    it('should get vultr price', () => {
       const result = priceCalculationService.getVultrPrice(storage, transfer, vultr);
 
       expect(result).toEqual(5);
@@ -124,17 +105,14 @@ describe('price calculation service', () => {
   });
 
   describe('storage = 300, transfer = 300', () => {
-    it('get backblaze price', () => {
-      const storage = 300;
-      const transfer = 300;
+    const storage = 300;
+    const transfer = 300;
+    it('should get backblaze price', () => {
       const result = priceCalculationService.getBackblazePrice(storage, transfer, backblaze);
       expect(result).toEqual(7);
     });
 
-    it('get bunny price', () => {
-      const storage = 300;
-      const transfer = 300;
-
+    it('should get bunny price', () => {
       const resultHdd = priceCalculationService.getBunnyPrice(storage, transfer, bunny, bunny.storagePrice.hdd);
       expect(resultHdd).toEqual(6);
 
@@ -142,10 +120,7 @@ describe('price calculation service', () => {
       expect(resultSsd).toEqual(9);
     });
 
-    it('get scaleway price', () => {
-      const storage = 300;
-      const transfer = 300;
-
+    it('should get scaleway price', () => {
       const isTransferLimitPrice = priceCalculationService.getTransferLimitPrice(transfer, scaleway);
       const isStorageMultyLimitPrice = priceCalculationService.getStorageLimitPrice(storage, true, scaleway);
       const isSingleLimitPrice = priceCalculationService.getStorageLimitPrice(storage, false, scaleway);
@@ -168,28 +143,21 @@ describe('price calculation service', () => {
       expect(Math.abs(resultSingle)).toEqual(11.25);
     });
 
-    it('get vultr price', () => {
-      const storage = 300;
-      const transfer = 300;
-
+    it('should get vultr price', () => {
       const result = priceCalculationService.getVultrPrice(storage, transfer, vultr);
-
       expect(result).toEqual(6);
     });
   });
 
   describe('storage = 1000, transfer = 1000', () => {
-    it('get backblaze price', () => {
-      const storage = 1000;
-      const transfer = 1000;
+    const storage = 1000;
+    const transfer = 1000;
+    it('should get backblaze price', () => {
       const result = priceCalculationService.getBackblazePrice(storage, transfer, backblaze);
       expect(result).toEqual(15);
     });
 
-    it('get bunny price', () => {
-      const storage = 1000;
-      const transfer = 1000;
-
+    it('should get bunny price', () => {
       const resultHdd = priceCalculationService.getBunnyPrice(storage, transfer, bunny, bunny.storagePrice.hdd);
       expect(resultHdd).toEqual(10);
 
@@ -197,10 +165,7 @@ describe('price calculation service', () => {
       expect(resultSsd).toEqual(10);
     });
 
-    it('get scaleway price', () => {
-      const storage = 1000;
-      const transfer = 1000;
-
+    it('should get scaleway price', () => {
       const isTransferLimitPrice = priceCalculationService.getTransferLimitPrice(transfer, scaleway);
       const isStorageMultyLimitPrice = priceCalculationService.getStorageLimitPrice(storage, true, scaleway);
       const isSingleLimitPrice = priceCalculationService.getStorageLimitPrice(storage, false, scaleway);
@@ -223,10 +188,7 @@ describe('price calculation service', () => {
       expect(Math.abs(resultSingle)).toEqual(46.25);
     });
 
-    it('get vultr price', () => {
-      const storage = 1000;
-      const transfer = 1000;
-
+    it('should get vultr price', () => {
       const result = priceCalculationService.getVultrPrice(storage, transfer, vultr);
 
       expect(result).toEqual(20);
