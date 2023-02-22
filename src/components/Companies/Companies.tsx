@@ -172,7 +172,7 @@ export const Companies: FC<PropsType> = ({ storage, transfer }) => {
   const charts = () => {
     return (
       <div className={styles.chartsContainer}>
-        <canvas ref={canvasRef} data-testid="canvas" width={500} height={400} />
+        <canvas ref={canvasRef} width={500} height={400} />
       </div>
     );
   };

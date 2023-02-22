@@ -25,7 +25,7 @@ export const createChartsData = (
       color: CANVAS_COLORS.RECTANGLE,
     },
   ];
-
+  
   const minPrice = Math.min(backblazePrice, bunnyPrice, scalewayPrice, vultrPrice);
   return companies.map((company: ICompanies) => {
     company.price === minPrice ? (company.color = CANVAS_COLORS.MIN_RECTTANGLE) : (company.color = CANVAS_COLORS.RECTANGLE);
