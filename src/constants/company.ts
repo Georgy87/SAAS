@@ -1,12 +1,12 @@
 import { Backblaze, Bunny, Scaleway, Vultr } from './types';
 
-export const backblaze: Backblaze = {
+export const backblaze: Readonly<Backblaze> = {
   storagePrice: 0.005,
   transferPrice: 0.01,
   minPayment: 7,
 };
 
-export const bunny: Bunny = {
+export const bunny: Readonly<Bunny> = {
   storagePrice: {
     hdd: 0.01,
     ssd: 0.02,
@@ -15,7 +15,7 @@ export const bunny: Bunny = {
   maxPayment: 10,
 };
 
-export const scaleway: Scaleway = {
+export const scaleway: Readonly<Scaleway> = {
   storagePrice: {
     multy: {
       free: 0,
@@ -32,7 +32,7 @@ export const scaleway: Scaleway = {
   },
 };
 
-export const vultr: Vultr = {
+export const vultr: Readonly<Vultr> = {
   storagePrice: 0.01,
   transferPrice: 0.01,
   minPayment: 5,
